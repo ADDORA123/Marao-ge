@@ -1,13 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.registration-form form');
-    const emailInput = document.getElementById('email');
+function alexa (){
+    let email = document.getElementById('email').value;
+    let errorDiv = document.getElementById('error-div');
+    let regex = /^[^\s@]+@[^\s@]+.[^\s@]{2,}$/;
 
-    form.addEventListener('submit', function(event) {
-        const email = emailInput.value;
-
-        if (!emailPattern.test(email)) {
-            event.preventDefault(); 
-            alert('Please enter a valid email address. It must contain "@" and a domain with at least two characters after it.');
-        }
-    });
-});
+    if(!regex.test(email)) {
+        errorDiv.style.display = 'block';
+        valid = false;
+    }
+    else {
+        errorDiv.style.display = 'none';
+    }
+}
